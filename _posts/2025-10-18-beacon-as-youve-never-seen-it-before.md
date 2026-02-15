@@ -6,7 +6,7 @@ tags: [beacon, cobalt-strike, c2, reflective-dll-injection, evasion, red-team]
 description: "Deep dive into Beacons: what they are, how they run in memory, the evolution of loaders (including prepended/Kayn styles), and the security implications defenders need to know."
 toc: true
 image:
-  path: /assets/img/beacon-c2/img_02.webp
+  path: /assets/img/beacon-c2/qqq1.png
   alt: Beacon C2 Network Topology
 ---
 
