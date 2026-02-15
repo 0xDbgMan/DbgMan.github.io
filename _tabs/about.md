@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-## Don't worry... I can also debug you
+## Don't worry... I can also debug u
 
 I'm a **Red Teamer** and **Low-Level Developer**.
 
