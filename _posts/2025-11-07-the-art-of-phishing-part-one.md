@@ -6,8 +6,8 @@ tags: [phishing, infrastructure, server-hardening, ssl, apache, red-team]
 description: "Deep dive into phishing: how to build a phishing campaign, choose domains (IPs, ASNs, subdomains), secure your server, and build the supporting infrastructure."
 toc: true
 image:
-  path: /assets/img/phishing-part1/img_02.webp
-  alt: Phishing Infrastructure Overview
+  path: /assets/img/dbgman-banner.webp
+  alt: DbgMan
 ---
 
 > *Hi — I'm DebuggerMan, a Red Teamer.*

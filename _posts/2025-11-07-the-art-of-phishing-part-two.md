@@ -6,8 +6,8 @@ tags: [phishing, cloning, detection-evasion, canary-tokens, push-security, red-t
 description: "Deep dive into phishing: What is Cloning, 4 Cloning Methods, 6 Detection Mechanisms, and Evasion Techniques."
 toc: true
 image:
-  path: /assets/img/phishing-part2/img_06.webp
-  alt: Website Cloning Detection Methods
+  path: /assets/img/dbgman-banner.webp
+  alt: DbgMan
 ---
 
 > *Hi — I'm DebuggerMan, a Red Teamer.*

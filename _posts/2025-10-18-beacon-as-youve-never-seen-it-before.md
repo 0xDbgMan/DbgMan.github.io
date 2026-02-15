@@ -6,8 +6,8 @@ tags: [beacon, cobalt-strike, c2, reflective-dll-injection, evasion, red-team]
 description: "Deep dive into Beacons: what they are, how they run in memory, the evolution of loaders (including prepended/Kayn styles), and the security implications defenders need to know."
 toc: true
 image:
-  path: /assets/img/beacon-c2/img_01.webp
-  alt: DbgMan - Beacon C2
+  path: /assets/img/dbgman-banner.webp
+  alt: DbgMan
 ---
 
 > *Hi — I'm DebuggerMan, a Red Teamer. This post dives into Beacons: what they are, how they run in memory, the evolution of loaders (including prepended/Kayn styles), and the security implications defenders need to know — let's jump in.*
