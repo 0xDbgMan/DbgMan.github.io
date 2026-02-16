@@ -1,5 +1,5 @@
 ---
-title: "Initial Access  The Art of Getting In: From Payload to Foothold"
+title: "Initial Access  The Art of Getting In"
 date: 2026-02-16 00:00:00 +0200
 categories: [Red Team Initial Access]
 tags: [red-team, initial-access, phishing, spearphishing, html-smuggling, evilginx, password-spraying, payload-delivery, mfa-bypass, social-engineering, opsec, mitre-attack, apt, supply-chain, dll-sideloading, quishing, teams-phishing, shellcode-loader, syscalls]
