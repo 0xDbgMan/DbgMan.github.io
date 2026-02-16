@@ -1,7 +1,7 @@
 ---
 title: "Beacon as You've Never Seen it Before"
 date: 2025-10-18 00:00:00 +0200
-categories: [C2, Red Team]
+categories: [Red Team, C2]
 tags: [beacon, cobalt-strike, c2, reflective-dll-injection, evasion, red-team]
 description: "Deep dive into Beacons: what they are, how they run in memory, the evolution of loaders (including prepended/Kayn styles), and the security implications defenders need to know."
 toc: true

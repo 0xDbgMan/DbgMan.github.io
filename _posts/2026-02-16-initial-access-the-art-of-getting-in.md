@@ -1,7 +1,7 @@
 ---
 title: "Initial Access  The Art of Getting In"
 date: 2026-02-16 00:00:00 +0200
-categories: [Red Team Initial Access]
+categories: [Red Team, Red Team Initial Access]
 tags: [red-team, initial-access, phishing, spearphishing, html-smuggling, evilginx, password-spraying, payload-delivery, mfa-bypass, social-engineering, opsec, mitre-attack, apt, supply-chain, dll-sideloading, quishing, teams-phishing, shellcode-loader, syscalls]
 description: "The complete red team guide to Initial Access: Payload Development (DLL Sideloading, Shellcode Loaders, Syscalls), HTML Smuggling, Phishing (QR Code Quishing, Teams Phishing), AitM/MFA Bypass (Evilginx, Device Code Phishing), Password Spraying, Exploiting Public-Facing Applications, Vishing, Physical Access (Rubber Ducky, Bash Bunny), Supply Chain attacks  with real-world APT case studies."
 toc: true
