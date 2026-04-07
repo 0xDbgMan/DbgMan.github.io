@@ -1,55 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace">
   <!-- Background -->
-  <rect width="1200" height="630" fill="#0d0d0d"/>
+  <rect width="1200" height="630" fill="#0a0a0a"/>
 
-  <!-- Top orange line -->
-  <rect x="0" y="0" width="1200" height="4" fill="#ff6a1a"/>
+  <!-- Subtle grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#151515" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
 
-  <!-- Title -->
-  <text x="600" y="245" text-anchor="middle" fill="#ffffff" font-size="86" font-weight="700">Shellcode Loaders</text>
+  <!-- Prompt line -->
+  <text x="180" y="305" fill="#ff6a1a" font-size="56" font-weight="700">&gt;_</text>
+  <text x="270" y="305" fill="#ffffff" font-size="56" font-weight="700">shellcode_loaders</text>
 
-  <!-- Subtitle -->
-  <text x="600" y="305" text-anchor="middle" fill="#9a9a9a" font-size="34" font-weight="300">The Art of Execution</text>
+  <!-- Subtitle, indented under prompt -->
+  <text x="270" y="360" fill="#6a6a6a" font-size="26" font-weight="400">// the art of execution</text>
 
-  <!-- Orange divider -->
-  <rect x="560" y="335" width="80" height="3" fill="#ff6a1a"/>
+  <!-- Bottom-left author tag -->
+  <text x="180" y="560" fill="#3a3a3a" font-size="20">~/0xDbgMan</text>
 
-  <!-- Author -->
-  <text x="600" y="385" text-anchor="middle" fill="#7a7a7a" font-size="24" font-weight="400">by 0xDbgMan</text>
-
-  <!-- Tag pills -->
-  <g font-size="16" fill="#9a9a9a">
-    <g>
-      <rect x="170" y="490" width="100" height="34" rx="6" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-      <text x="220" y="513" text-anchor="middle">Classic</text>
-    </g>
-    <g>
-      <rect x="285" y="490" width="140" height="34" rx="6" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-      <text x="355" y="513" text-anchor="middle">Reflective DLL</text>
-    </g>
-    <g>
-      <rect x="440" y="490" width="80" height="34" rx="6" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-      <text x="480" y="513" text-anchor="middle">.NET</text>
-    </g>
-    <g>
-      <rect x="535" y="490" width="70" height="34" rx="6" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-      <text x="570" y="513" text-anchor="middle">PIC</text>
-    </g>
-    <g>
-      <rect x="620" y="490" width="150" height="34" rx="6" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-      <text x="695" y="513" text-anchor="middle">Crystal Palace</text>
-    </g>
-    <g>
-      <rect x="785" y="490" width="110" height="34" rx="6" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-      <text x="840" y="513" text-anchor="middle">IAT Hook</text>
-    </g>
-    <g>
-      <rect x="910" y="490" width="80" height="34" rx="6" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-      <text x="950" y="513" text-anchor="middle">Ekko</text>
-    </g>
-    <g>
-      <rect x="1005" y="490" width="100" height="34" rx="6" fill="none" stroke="#3a3a3a" stroke-width="1"/>
-      <text x="1055" y="513" text-anchor="middle">Draugr</text>
-    </g>
-  </g>
+  <!-- Right side blinking cursor block -->
+  <rect x="1010" y="270" width="22" height="44" fill="#ff6a1a"/>
 </svg>
