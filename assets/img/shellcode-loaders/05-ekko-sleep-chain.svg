@@ -15,32 +15,26 @@
 
   <rect x="40" y="56" width="580" height="38" rx="6" class="box"/>
   <text x="60" y="78" class="c" font-weight="700">① VirtualProtect(beacon, RX → RW)</text>
-  <text x="600" y="78" class="s">100ms</text>
   <line x1="330" y1="94" x2="330" y2="108" class="arr"/>
 
   <rect x="40" y="110" width="580" height="38" rx="6" class="box-r"/>
   <text x="60" y="132" class="c" font-weight="700" fill="#e05252">② SystemFunction032(beacon, key) — RC4 ENCRYPT</text>
-  <text x="600" y="132" class="s">200ms</text>
   <line x1="330" y1="148" x2="330" y2="162" class="arr"/>
 
   <rect x="40" y="164" width="580" height="38" rx="6" fill="#e05252" stroke="none"/>
   <text x="60" y="186" class="c" font-weight="700" fill="#fff">③ WaitForSingleObject(event, sleep_time) — SLEEP</text>
-  <text x="600" y="186" font-size="11" fill="#fce8e8">300ms</text>
   <line x1="330" y1="202" x2="330" y2="216" class="arr"/>
 
   <rect x="40" y="218" width="580" height="38" rx="6" class="box-r"/>
   <text x="60" y="240" class="c" font-weight="700" fill="#e05252">④ SystemFunction032(beacon, key) — RC4 DECRYPT</text>
-  <text x="600" y="240" class="s">400ms</text>
   <line x1="330" y1="256" x2="330" y2="270" class="arr"/>
 
   <rect x="40" y="272" width="580" height="38" rx="6" class="box"/>
   <text x="60" y="294" class="c" font-weight="700">⑤ VirtualProtect(beacon, RW → RX)</text>
-  <text x="600" y="294" class="s">500ms</text>
   <line x1="330" y1="310" x2="330" y2="324" class="arr"/>
 
   <rect x="40" y="326" width="580" height="38" rx="6" class="box"/>
   <text x="60" y="348" class="c" font-weight="700">⑥ SetEvent(resume) — signal main thread</text>
-  <text x="600" y="348" class="s">600ms</text>
 
   <!-- Bottom notes -->
   <rect x="40" y="380" width="290" height="30" rx="6" fill="#f0f0f0" stroke="#999" stroke-width="1"/>

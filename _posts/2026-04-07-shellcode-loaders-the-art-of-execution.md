@@ -7,8 +7,8 @@ tags: [shellcode, loaders, crystal-palace, reflective-dll, pic, evasion, red-tea
 description: "The complete red team guide to Shellcode Loaders: Classic, Reflective DLL (Stephen Fewer), .NET Assembly, Staged vs Stageless, PIC Loaders, and a deep dive into Crystal Palace — IAT hooking, module overloading, NtContinue, Draugr, Ekko, and real-world implementations."
 toc: true
 image:
-  path: /assets/img/shellcode-loaders/03-crystal-palace-pipeline.svg
-  alt: Crystal Palace Build Pipeline
+  path: /assets/img/shellcode-loaders/loaders-banner.svg
+  alt: Shellcode Loaders — The Art of Execution
 ---
 
 > *Hi — I'm DebuggerMan, a Red Teamer. The complete red team guide to Shellcode Loaders: Classic Shellcode Loaders, Reflective DLL Loaders (Stephen Fewer), .NET Assembly Loaders (CLR Hosting, Assembly.Load), Staged vs Stageless, PIC Loaders, and a **deep dive into Crystal Palace** — Raphael Mudge's PIC linker, the Tradecraft Garden, PICO architecture, spec files, IAT hooking, module overloading, NtContinue entry transfer, call stack spoofing via Draugr, Ekko sleep masking, YARA signature removal, and real-world implementations (Eden, KaplaStrike, StealthPalace). Mapped to MITRE ATT&CK. Real APT case studies.*
