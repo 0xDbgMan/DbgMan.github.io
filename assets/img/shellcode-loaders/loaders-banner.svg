@@ -1,25 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace">
-  <!-- Background -->
-  <rect width="1200" height="630" fill="#0a0a0a"/>
-
-  <!-- Subtle grid -->
+  <!-- Base background: deep navy -->
   <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#151515" stroke-width="1"/>
-    </pattern>
+    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
+      <stop offset="0%"  stop-color="#11161f"/>
+      <stop offset="100%" stop-color="#05080d"/>
+    </radialGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
 
-  <!-- Prompt line -->
-  <text x="180" y="305" fill="#ff6a1a" font-size="56" font-weight="700">&gt;_</text>
-  <text x="270" y="305" fill="#ffffff" font-size="56" font-weight="700">shellcode_loaders</text>
+  <!-- Faint hex dump rows in the background -->
+  <g fill="#1e2633" font-size="18" font-weight="400">
+    <text x="40"  y="60">48 89 5C 24 08  48 89 6C 24 10  48 89 74 24 18  57  48 83 EC 20</text>
+    <text x="40"  y="100">48 8B F9  E8 00 00 00 00  48 8B 05 00 00 00 00  48 33 C4</text>
+    <text x="40"  y="140">B8 00 10 00 00  48 89 44 24 30  48 8D 4C 24 30  FF 15 00 00</text>
+    <text x="40"  y="180">4C 8B 44 24 38  33 D2  48 8B C8  E8 00 00 00 00  85 C0 7C 1B</text>
+    <text x="40"  y="450">90 90 90 90  CC CC CC CC  EB FE  C3  E9 00 00 00 00  FF E0</text>
+    <text x="40"  y="490">31 C0  31 DB  31 C9  31 D2  50  68 2F 2F 73 68  68 2F 62 69 6E</text>
+    <text x="40"  y="530">CD 80  6A 0B  58  99  52  68 6E 2F 73 68  68 2F 2F 62 69</text>
+    <text x="40"  y="570">EB 1F  5E  89 76 08  31 C0  88 46 07  89 46 0C  B0 0B</text>
+  </g>
 
-  <!-- Subtitle, indented under prompt -->
-  <text x="270" y="360" fill="#6a6a6a" font-size="26" font-weight="400">// the art of execution</text>
+  <!-- Title bar -->
+  <rect x="0" y="280" width="1200" height="120" fill="#05080d" opacity="0.85"/>
+  <rect x="0" y="280" width="6" height="120" fill="#ff6a1a"/>
 
-  <!-- Bottom-left author tag -->
-  <text x="180" y="560" fill="#3a3a3a" font-size="20">~/0xDbgMan</text>
-
-  <!-- Right side blinking cursor block -->
-  <rect x="1010" y="270" width="22" height="44" fill="#ff6a1a"/>
+  <!-- Title -->
+  <text x="60" y="335" fill="#ffffff" font-size="52" font-weight="700">Shellcode Loaders</text>
+  <text x="60" y="378" fill="#9aa4b6" font-size="22" font-weight="400">the art of execution &#8212; by 0xDbgMan</text>
 </svg>
