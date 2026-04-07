@@ -1,0 +1,79 @@
+<svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'Courier New', monospace">
+  <style>
+    .t { font-size: 14px; font-weight: 700; fill: #1a1a1a; }
+    .s { font-size: 12px; fill: #666; }
+    .c { font-size: 11px; fill: #333; }
+    .box { fill: #f5f5f5; stroke: #ccc; stroke-width: 1; }
+    .box-a { fill: #f0f0f0; stroke: #333; stroke-width: 1.5; }
+    .box-r { fill: #fce8e8; stroke: #e05252; stroke-width: 1; }
+    .arr { stroke: #999; stroke-width: 1.2; fill: none; marker-end: url(#a); }
+    .arr-r { stroke: #e05252; stroke-width: 1.2; fill: none; marker-end: url(#ar); }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 2L8 5L2 8" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round"/></marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 2L8 5L2 8" fill="none" stroke="#e05252" stroke-width="1.5" stroke-linecap="round"/></marker>
+  </defs>
+
+  <!-- Row 1: C source files -->
+  <rect x="30" y="20" width="140" height="36" rx="6" class="box"/><text x="100" y="43" text-anchor="middle" class="c" font-weight="700">loader.c</text>
+  <rect x="190" y="20" width="140" height="36" rx="6" class="box"/><text x="260" y="43" text-anchor="middle" class="c" font-weight="700">hook.c</text>
+  <rect x="350" y="20" width="140" height="36" rx="6" class="box"/><text x="420" y="43" text-anchor="middle" class="c" font-weight="700">draugr.c</text>
+  <rect x="510" y="20" width="140" height="36" rx="6" class="box"/><text x="580" y="43" text-anchor="middle" class="c" font-weight="700">sleep.c</text>
+
+  <!-- Arrows down -->
+  <line x1="100" y1="56" x2="100" y2="80" class="arr"/>
+  <line x1="260" y1="56" x2="260" y2="80" class="arr"/>
+  <line x1="420" y1="56" x2="420" y2="80" class="arr"/>
+  <line x1="580" y1="56" x2="580" y2="80" class="arr"/>
+  <text x="360" y="73" text-anchor="middle" class="s">mingw-w64 cross-compile</text>
+
+  <!-- Row 2: Object files -->
+  <rect x="30" y="82" width="140" height="36" rx="6" class="box-a"/><text x="100" y="105" text-anchor="middle" class="c" font-weight="700">loader.x64.o</text>
+  <rect x="190" y="82" width="140" height="36" rx="6" class="box-a"/><text x="260" y="105" text-anchor="middle" class="c" font-weight="700">hook.x64.o</text>
+  <rect x="350" y="82" width="140" height="36" rx="6" class="box-a"/><text x="420" y="105" text-anchor="middle" class="c" font-weight="700">draugr.x64.o</text>
+  <rect x="510" y="82" width="140" height="36" rx="6" class="box-a"/><text x="580" y="105" text-anchor="middle" class="c" font-weight="700">sleep.x64.o</text>
+
+  <!-- Converge arrows -->
+  <line x1="100" y1="118" x2="340" y2="170" class="arr"/>
+  <line x1="260" y1="118" x2="340" y2="170" class="arr"/>
+  <line x1="420" y1="118" x2="340" y2="170" class="arr"/>
+  <line x1="580" y1="118" x2="340" y2="170" class="arr"/>
+
+  <!-- Spec file -->
+  <rect x="220" y="172" width="240" height="50" rx="8" class="box-r"/>
+  <text x="340" y="193" text-anchor="middle" font-size="13" fill="#e05252" font-weight="700">loader.spec</text>
+  <text x="340" y="211" text-anchor="middle" class="c">Crystal Palace linker script</text>
+
+  <line x1="340" y1="222" x2="340" y2="252" class="arr-r"/>
+
+  <!-- Crystal Palace Engine -->
+  <rect x="170" y="254" width="340" height="50" rx="8" fill="#fce8e8" stroke="#e05252" stroke-width="2"/>
+  <text x="340" y="275" text-anchor="middle" font-size="14" fill="#e05252" font-weight="700">Crystal Palace Linker</text>
+  <text x="340" y="293" text-anchor="middle" class="c">make pic · merge · link · addhook · dfr</text>
+
+  <!-- DLL input from side -->
+  <rect x="560" y="254" width="140" height="50" rx="8" class="box-a"/>
+  <text x="630" y="275" text-anchor="middle" class="c" font-weight="700">beacon.dll</text>
+  <text x="630" y="293" text-anchor="middle" class="c">Raw DLL input</text>
+  <line x1="560" y1="279" x2="510" y2="279" class="arr"/>
+
+  <line x1="340" y1="304" x2="340" y2="334" class="arr-r"/>
+
+  <!-- Binary transforms -->
+  <rect x="60" y="336" width="180" height="40" rx="6" class="box"/>
+  <text x="150" y="353" text-anchor="middle" class="c" font-weight="700">+mutate</text>
+  <text x="150" y="368" text-anchor="middle" class="s">Code mutation</text>
+
+  <rect x="260" y="336" width="180" height="40" rx="6" class="box"/>
+  <text x="350" y="353" text-anchor="middle" class="c" font-weight="700">+disco</text>
+  <text x="350" y="368" text-anchor="middle" class="s">Shuffle function order</text>
+
+  <rect x="460" y="336" width="180" height="40" rx="6" class="box"/>
+  <text x="550" y="353" text-anchor="middle" class="c" font-weight="700">+optimize</text>
+  <text x="550" y="368" text-anchor="middle" class="s">Strip unused code</text>
+
+  <!-- Final output -->
+  <line x1="340" y1="376" x2="340" y2="410" class="arr-r"/>
+  <rect x="220" y="412" width="240" height="40" rx="10" fill="#e05252" stroke="none"/>
+  <text x="340" y="437" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">output.bin — Final PIC Blob</text>
+</svg>

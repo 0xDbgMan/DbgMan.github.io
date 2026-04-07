@@ -1,0 +1,68 @@
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'Courier New', monospace">
+  <style>
+    .t { font-size: 14px; font-weight: 700; fill: #1a1a1a; }
+    .s { font-size: 12px; fill: #666; }
+    .c { font-size: 11px; fill: #333; }
+    .r { fill: #e05252; font-weight: 700; font-size: 12px; }
+    .box { fill: #f5f5f5; stroke: #ccc; stroke-width: 1; }
+    .box-r { fill: #fce8e8; stroke: #e05252; stroke-width: 1.5; }
+    .box-d { fill: none; stroke: #999; stroke-width: 1; stroke-dasharray: 6 4; }
+    .arr { stroke: #999; stroke-width: 1.2; fill: none; marker-end: url(#a); }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M2 2L8 5L2 8" fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+
+  <!-- LEFT: Stomped -->
+  <text x="170" y="24" text-anchor="middle" class="t">Stomped (Stephen Fewer)</text>
+  <text x="170" y="42" text-anchor="middle" class="s">Loader inside the DLL — same file</text>
+
+  <rect x="50" y="55" width="240" height="260" rx="10" class="box-d"/>
+  <text x="170" y="78" text-anchor="middle" class="s">beacon.dll</text>
+
+  <rect x="70" y="90" width="200" height="50" rx="6" class="box-r"/>
+  <text x="170" y="112" text-anchor="middle" class="r">ReflectiveLoader()</text>
+  <text x="170" y="130" text-anchor="middle" class="c">.text — stays in memory</text>
+
+  <rect x="70" y="150" width="200" height="50" rx="6" class="box"/>
+  <text x="170" y="172" text-anchor="middle" class="c" font-weight="700">Beacon Logic</text>
+  <text x="170" y="190" text-anchor="middle" class="c">C2 comms, tasks</text>
+
+  <rect x="70" y="210" width="200" height="36" rx="6" class="box"/>
+  <text x="170" y="233" text-anchor="middle" class="c">.data / .rdata</text>
+
+  <rect x="70" y="256" width="200" height="36" rx="6" class="box"/>
+  <text x="170" y="279" text-anchor="middle" class="c">Config blob</text>
+
+  <!-- RIGHT: Prepended -->
+  <text x="540" y="24" text-anchor="middle" class="t">Prepended (Crystal Palace)</text>
+  <text x="540" y="42" text-anchor="middle" class="s">Loader separate — swappable, frees self</text>
+
+  <rect x="420" y="55" width="240" height="80" rx="10" fill="#f0f0f0" stroke="#333" stroke-width="1.5"/>
+  <text x="540" y="85" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a1a">PIC Loader (Crystal Palace)</text>
+  <text x="540" y="103" text-anchor="middle" class="c">Standalone — cleans up after</text>
+
+  <line x1="540" y1="135" x2="540" y2="160" class="arr"/>
+  <text x="595" y="152" class="s">maps + frees self</text>
+
+  <rect x="420" y="165" width="240" height="155" rx="10" class="box-d"/>
+  <text x="540" y="188" text-anchor="middle" class="s">beacon.dll (encrypted resource)</text>
+
+  <rect x="440" y="198" width="200" height="40" rx="6" class="box"/>
+  <text x="540" y="215" text-anchor="middle" class="c" font-weight="700">Beacon Logic</text>
+  <text x="540" y="230" text-anchor="middle" class="c">C2 comms, tasks</text>
+
+  <rect x="440" y="246" width="200" height="30" rx="6" class="box"/>
+  <text x="540" y="266" text-anchor="middle" class="c">.data / .rdata + Config</text>
+
+  <!-- Bottom comparison -->
+  <rect x="30" y="340" width="310" height="44" rx="8" class="box-r"/>
+  <text x="185" y="358" text-anchor="middle" class="r">Loader stays in memory forever</text>
+  <text x="185" y="374" text-anchor="middle" class="s">Static signature — more attack surface</text>
+
+  <rect x="380" y="340" width="310" height="44" rx="8" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+  <text x="535" y="358" text-anchor="middle" font-size="12" font-weight="700" fill="#1a1a1a">Loader frees itself after exec</text>
+  <text x="535" y="374" text-anchor="middle" class="s">No trace — modular — C2 agnostic</text>
+</svg>
