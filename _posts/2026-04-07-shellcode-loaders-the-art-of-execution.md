@@ -1,6 +1,5 @@
 ---
 title: "Shellcode Loaders: The Art of Execution"
-published: false
 date: 2026-04-07 00:00:00 +0200
 categories: [Red Team, Loaders]
 tags: [shellcode, loaders, crystal-palace, reflective-dll, pic, evasion, red-team, cobalt-strike]
