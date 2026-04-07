@@ -1,30 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace">
-  <!-- Base background: deep navy -->
-  <defs>
-    <radialGradient id="bg" cx="50%" cy="40%" r="75%">
-      <stop offset="0%"  stop-color="#11161f"/>
-      <stop offset="100%" stop-color="#05080d"/>
-    </radialGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1e1e2e"/>
 
-  <!-- Faint hex dump rows in the background -->
-  <g fill="#1e2633" font-size="18" font-weight="400">
-    <text x="40"  y="60">48 89 5C 24 08  48 89 6C 24 10  48 89 74 24 18  57  48 83 EC 20</text>
-    <text x="40"  y="100">48 8B F9  E8 00 00 00 00  48 8B 05 00 00 00 00  48 33 C4</text>
-    <text x="40"  y="140">B8 00 10 00 00  48 89 44 24 30  48 8D 4C 24 30  FF 15 00 00</text>
-    <text x="40"  y="180">4C 8B 44 24 38  33 D2  48 8B C8  E8 00 00 00 00  85 C0 7C 1B</text>
-    <text x="40"  y="450">90 90 90 90  CC CC CC CC  EB FE  C3  E9 00 00 00 00  FF E0</text>
-    <text x="40"  y="490">31 C0  31 DB  31 C9  31 D2  50  68 2F 2F 73 68  68 2F 62 69 6E</text>
-    <text x="40"  y="530">CD 80  6A 0B  58  99  52  68 6E 2F 73 68  68 2F 2F 62 69</text>
-    <text x="40"  y="570">EB 1F  5E  89 76 08  31 C0  88 46 07  89 46 0C  B0 0B</text>
-  </g>
+  <!-- Code window -->
+  <rect x="120" y="105" width="960" height="420" rx="12" fill="#11111b" stroke="#313244" stroke-width="1"/>
 
   <!-- Title bar -->
-  <rect x="0" y="280" width="1200" height="120" fill="#05080d" opacity="0.85"/>
-  <rect x="0" y="280" width="6" height="120" fill="#ff6a1a"/>
+  <rect x="120" y="105" width="960" height="42" rx="12" fill="#181825"/>
+  <rect x="120" y="135" width="960" height="12" fill="#181825"/>
 
-  <!-- Title -->
-  <text x="60" y="335" fill="#ffffff" font-size="52" font-weight="700">Shellcode Loaders</text>
-  <text x="60" y="378" fill="#9aa4b6" font-size="22" font-weight="400">the art of execution &#8212; by 0xDbgMan</text>
+  <!-- Traffic lights -->
+  <circle cx="148" cy="126" r="7" fill="#f38ba8"/>
+  <circle cx="170" cy="126" r="7" fill="#f9e2af"/>
+  <circle cx="192" cy="126" r="7" fill="#a6e3a1"/>
+
+  <!-- Filename -->
+  <text x="600" y="131" text-anchor="middle" fill="#7f849c" font-size="16">loader.c — 0xDbgMan</text>
+
+  <!-- Code lines -->
+  <g font-size="20">
+    <text x="155" y="195" fill="#6c7086">01</text>
+    <text x="200" y="195" fill="#cba6f7">#include</text>
+    <text x="310" y="195" fill="#a6e3a1">&lt;windows.h&gt;</text>
+
+    <text x="155" y="225" fill="#6c7086">02</text>
+
+    <text x="155" y="255" fill="#6c7086">03</text>
+    <text x="200" y="255" fill="#89b4fa">int</text>
+    <text x="240" y="255" fill="#f9e2af">main</text>
+    <text x="290" y="255" fill="#cdd6f4">() {</text>
+
+    <text x="155" y="285" fill="#6c7086">04</text>
+    <text x="240" y="285" fill="#cdd6f4">void *mem =</text>
+    <text x="395" y="285" fill="#f9e2af">VirtualAlloc</text>
+    <text x="540" y="285" fill="#cdd6f4">(0, sz,</text>
+    <text x="640" y="285" fill="#fab387">MEM_COMMIT</text>
+    <text x="765" y="285" fill="#cdd6f4">,</text>
+    <text x="780" y="285" fill="#fab387">PAGE_RWX</text>
+    <text x="880" y="285" fill="#cdd6f4">);</text>
+
+    <text x="155" y="315" fill="#6c7086">05</text>
+    <text x="240" y="315" fill="#f9e2af">memcpy</text>
+    <text x="320" y="315" fill="#cdd6f4">(mem, payload, sz);</text>
+
+    <text x="155" y="345" fill="#6c7086">06</text>
+    <text x="240" y="345" fill="#cdd6f4">((void(*)())mem)();</text>
+
+    <text x="155" y="375" fill="#6c7086">07</text>
+    <text x="200" y="375" fill="#cdd6f4">}</text>
+  </g>
+
+  <!-- Title under window -->
+  <text x="600" y="585" text-anchor="middle" fill="#cdd6f4" font-size="32" font-weight="700">Shellcode Loaders <tspan fill="#7f849c" font-weight="400">— the art of execution</tspan></text>
 </svg>
