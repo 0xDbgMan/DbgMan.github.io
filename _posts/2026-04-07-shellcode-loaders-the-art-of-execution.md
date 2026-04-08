@@ -3,7 +3,7 @@ title: "Shellcode Loaders: The Art of Execution"
 date: 2026-04-07 00:00:00 +0200
 categories: [Red Team, Loaders]
 tags: [shellcode, loaders, crystal-palace, reflective-dll, pic, evasion, red-team, cobalt-strike]
-description: "The complete red team guide to Shellcode Loaders: Classic, Reflective DLL (Stephen Fewer), .NET Assembly, Staged vs Stageless, PIC Loaders, and a deep dive into Crystal Palace — IAT hooking, module overloading, NtContinue, Draugr, Ekko, and real-world implementations."
+description: "The complete red team guide to Shellcode Loaders: Classic, Reflective DLL (Stephen Fewer), .NET Assembly, Staged vs Stageless, PIC Loaders, and a deep dive into Crystal Palace IAT hooking, module overloading, NtContinue, Draugr, Ekko, and real-world implementations."
 toc: true
 image:
   path: /assets/img/shellcode-loaders/loaders-banner.png
