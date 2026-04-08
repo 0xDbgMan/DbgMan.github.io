@@ -792,6 +792,4 @@ What defenders look for  and what every operator should be aware of:
 *Follow me on X: @0XDbgMan*
 *Follow me on Telegram: @DbgMan*
 
-**Tags**: `red-team` `loaders` `crystal-palace` `reflective-loading` `pic` `pico` `udrl` `cobalt-strike` `sleep-obfuscation` `ekko` `draugr` `call-stack-spoofing` `module-overloading` `ntcontinue` `iat-hooking` `yara` `evasion` `mitre-attack` `tradecraft-garden`
-
 *This post is licensed under CC BY 4.0 by the author.*
