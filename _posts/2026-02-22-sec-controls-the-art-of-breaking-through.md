@@ -1,5 +1,5 @@
 ---
-title: "Sec Controls: The Art of Breaking Through"
+title: "Security Controls: Modern EDR & Windows Protection Bypass"
 date: 2026-02-22 00:00:00 +0200
 categories: [Red Team, Evasion]
 tags: [red-team, evasion, windows-defender, applocker, wdac, credential-guard, edr, smartscreen, asr-rules, sysmon, ppl, etw, api-hooking, amsi, kernel-callbacks, direct-syscalls, indirect-syscalls, call-stack-spoofing, lolbas, wdac-bypass, applocker-bypass, credential-access, mitre-attack, defense-evasion, byovd, edr-kill, sleep-obfuscation, process-injection, edr-silencer, layered-syscall, hardware-breakpoints, byoi]
