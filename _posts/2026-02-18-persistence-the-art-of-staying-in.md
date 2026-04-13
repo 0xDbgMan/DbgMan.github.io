@@ -1,5 +1,5 @@
 ---
-title: "Persistence: The Art of Staying In"
+title: "Persistence: Advanced Red Team Persistence Techniques"
 date: 2026-02-18 00:00:00 +0200
 categories: [Red Team, Post-Exploitation]
 tags: [red-team, persistence, windows, linux, macos, active-directory, cloud, kubernetes, registry, wmi, scheduled-tasks, golden-ticket, diamond-ticket, sapphire-ticket, dcshadow, skeleton-key, dsrm, gpo, ebpf, bpfdoor, linkpro, lkm, wsl, dylib-hijacking, office-persistence, ifeo, ssp, accessibility-features, application-shimming, opsec, apt, mitre-attack, volt-typhoon, salt-typhoon, turla, lazarus, apt29, apt28, apt41, scattered-spider, unc3944, appdomain]
