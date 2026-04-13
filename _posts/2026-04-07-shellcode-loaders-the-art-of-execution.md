@@ -1,5 +1,5 @@
 ---
-title: "Shellcode Loaders: The Art of Execution"
+title: "Shellcode Loaders: Advanced Execution & Evasion Tradecraft"
 date: 2026-04-07 00:00:00 +0200
 categories: [Red Team, Loaders]
 tags: [shellcode, loaders, crystal-palace, reflective-dll, pic, evasion, red-team, cobalt-strike]
@@ -12,7 +12,7 @@ image:
 
 > *Hi I'm DebuggerMan, a Red Teamer. The complete red team guide to Shellcode Loaders: Classic Shellcode Loaders, Reflective DLL Loaders (Stephen Fewer), .NET Assembly Loaders (CLR Hosting, Assembly.Load), Staged vs Stageless, PIC Loaders, and a **deep dive into Crystal Palace** Raphael Mudge's PIC linker, the Tradecraft Garden, PICO architecture, spec files, IAT hooking, module overloading, NtContinue entry transfer, call stack spoofing via Draugr, Ekko sleep masking, YARA signature removal, and real-world implementations (Eden, KaplaStrike, StealthPalace). Mapped to MITRE ATT&CK. Real APT case studies.*
 
-## Shellcode Loaders: The Art of Execution
+## Shellcode Loaders: Advanced Execution & Evasion Tradecraft
 
 **Contents**
 
