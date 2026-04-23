@@ -3,7 +3,7 @@ title: "Persistence: Advanced Red Team Persistence Techniques"
 date: 2026-02-18 00:00:00 +0200
 categories: [Red Team, Post-Exploitation]
 tags: [red-team, persistence, windows, linux, macos, active-directory, cloud, kubernetes, registry, wmi, scheduled-tasks, golden-ticket, diamond-ticket, sapphire-ticket, dcshadow, skeleton-key, dsrm, gpo, ebpf, bpfdoor, linkpro, lkm, wsl, dylib-hijacking, office-persistence, ifeo, ssp, accessibility-features, application-shimming, opsec, apt, mitre-attack, volt-typhoon, salt-typhoon, turla, lazarus, apt29, apt28, apt41, scattered-spider, unc3944, appdomain]
-description: "The definitive red team guide to persistence across every platform: 50+ techniques across Windows (Registry, IFEO, SSP, Time Provider, Office T1137, Accessibility Features, Application Shimming), Scheduled Tasks, WMI, Services, DLL/COM/AppDomainManager, UEFI Bootkits, Active Directory (Golden/Diamond/Sapphire Ticket, AdminSDHolder, DCSync, DCShadow, Skeleton Key, DSRM, GPO), Linux (cron, systemd, SSH, PAM, eBPF rootkits, LKM, WSL), macOS (LaunchAgents, Login Items, Dylib Hijacking), and Cloud (Azure/AWS/GCP, Kubernetes). Real APT TTPs from Volt Typhoon, Salt Typhoon, Turla, Lazarus, APT29, APT28, APT41, UNC3944/Scattered Spider. Full OPSEC tradecraft."
+description: ""
 toc: true
 image:
   path: /assets/img/persistence/persistence-banner.png
@@ -75,53 +75,6 @@ MITRE ATT&CK maps this to **TA0003 – Persistence**, with 19 techniques and doz
 ![MITRE ATT&CK TA0003 Persistence Techniques](/assets/img/persistence/mitre-ta0003-map.png)
 _MITRE ATT&CK TA0003  19 techniques, 65+ sub-techniques across Windows, Linux, macOS, and Cloud_
 
-Before touching a keyboard, understand the landscape. MITRE ATT&CK TA0003 organizes persistence into categories:
-
-| Technique | ID | Platforms | Stealth Level |
-|-----------|-----|-----------|--------------|
-| Registry Run Keys / Startup Folder | T1547.001 | Windows | Low |
-| Security Support Provider | T1547.005 | Windows | **High** |
-| Time Provider | T1547.003 | Windows | **High** |
-| Active Setup | T1547.014 | Windows | **High** |
-| Accessibility Features Backdoor | T1546.008 | Windows | Medium |
-| IFEO (Debugger / VerifierDlls) | T1546.012 | Windows | **High** |
-| Netsh Helper DLL | T1546.007 | Windows | **High** |
-| PowerShell Profile | T1546.013 | Windows | Medium |
-| Application Shimming | T1546.011 | Windows | **High** |
-| Office Application Startup | T1137 | Windows | **High** |
-| Scheduled Task/Job | T1053.005 | Windows, Linux, macOS | Medium |
-| Windows Service | T1543.003 | Windows | Medium |
-| WMI Event Subscription | T1546.003 | Windows | **High** |
-| DLL Search Order Hijacking | T1574.001 | Windows | **High** |
-| COM Hijacking | T1546.015 | Windows | **High** |
-| AppDomainManager Injection | T1574.014 | Windows | **Very High** |
-| Bootkit / Pre-OS Boot | T1542.003 | Windows, Linux | **Critical** |
-| Golden Ticket (Kerberos) | T1558.001 | Windows AD | **Critical** |
-| Diamond Ticket | T1558.001 | Windows AD | **Very High** |
-| Sapphire Ticket | T1558.001 | Windows AD | **Critical** |
-| DCShadow | T1207 | Windows AD | **Critical** |
-| Skeleton Key | T1556.001 | Windows AD | **High** |
-| DSRM Account Backdoor | T1003.004 | Windows AD | **High** |
-| GPO Persistence | T1484.001 | Windows AD | **High** |
-| AdminSDHolder | T1078.002 | Windows AD | **High** |
-| Cron Job | T1053.003 | Linux, macOS | Low |
-| Shell Profile Hijacking | T1546.004 | Linux, macOS | Medium |
-| udev Rules | | Linux | **High** |
-| XDG Autostart | | Linux (Desktop) | Medium |
-| eBPF Rootkit | | Linux | **Critical** |
-| LKM Rootkit | | Linux | **Critical** |
-| WSL Persistence | | Windows/Linux | **High** |
-| Launch Agent / Launch Daemon | T1543.001/4 | macOS | Medium |
-| Login Items | T1547.015 | macOS 13+ | **High** |
-| Dylib Hijacking | T1574.004 | macOS | **Very High** |
-| Cloud Account Manipulation | T1098 | Azure/AWS/GCP | **High** |
-| Golden SAML | | Azure/ADFS | **Critical** |
-| SSH Authorized Keys | T1098.004 | Linux, macOS | Medium |
-| BITS Jobs | T1197 | Windows | Medium |
-| Kubernetes ClusterRoleBinding | T1610 | Kubernetes | **Very High** |
-| Kubernetes DaemonSet | T1609 | Kubernetes | **High** |
-
-The rule of operators: **never rely on a single persistence mechanism**. Layer them. Use a noisy one as a decoy (it burns first), and keep the silent one untouched.
 
 ## Phase 2: Windows Registry Persistence
 
@@ -2251,109 +2204,7 @@ Persistence     → 1. Port Monitor DLL (SYSTEM, survives AV)
 
 APT41 was unique in combining financially-motivated attacks with state espionage in the same operation  requiring persistence mechanisms that worked in both enterprise Windows and cloud environments simultaneously.
 
-## Persistence Techniques Summary
-
-### Windows
-
-| Technique | MITRE ID | Privilege | Stealth | Tool |
-|-----------|----------|-----------|---------|------|
-| Registry Run Key | T1547.001 | User/Admin | Low | reg.exe, PowerShell |
-| Winlogon Userinit | T1547.004 | Admin | Medium | reg.exe |
-| Port Monitor DLL | T1547.010 | Admin | **High** | Manual |
-| Authentication Package | T1547.002 | Admin | **High** | reg.exe |
-| Security Support Provider | T1547.005 | Admin | **High** | reg.exe / memssp |
-| Time Provider DLL | T1547.003 | Admin | **High** | reg.exe |
-| Netsh Helper DLL | T1546.007 | Admin | **High** | reg.exe |
-| Active Setup | T1547.014 | Admin | **High** | reg.exe |
-| Accessibility Features | T1546.008 | Admin | Medium | reg.exe / copy |
-| IFEO (Debugger/VerifierDlls) | T1546.012 | Admin | **High** | reg.exe |
-| PowerShell Profile | T1546.013 | User | Medium | PowerShell |
-| Application Shimming | T1546.011 | Admin | **High** | sdbinst.exe |
-| Office Test Registry | T1137.002 | User | **High** | reg.exe |
-| Office Template Macro | T1137.001 | User | Medium | File copy |
-| Outlook Forms | T1137.003 | User | **High** | Outlook API |
-| Outlook Rules | T1137.005 | User | **High** | Outlook API |
-| Scheduled Task | T1053.005 | User/Admin | Medium | schtasks, PowerShell |
-| Invisible Task (SD delete) | T1053.005 | SYSTEM | **Very High** | PowerShell |
-| Windows Service | T1543.003 | Admin | Medium | sc.exe |
-| Hidden Service (SDDL) | T1543.003 | Admin | **High** | sc sdset |
-| WMI Subscription | T1546.003 | Admin | **Very High** | PowerShell WMI |
-| DLL Hijacking | T1574.001 | User | **High** | Manual DLL |
-| COM Hijacking | T1546.015 | User (HKCU) | **Very High** | reg.exe |
-| AppDomainManager Injection | T1574.014 | User | **Very High** | .config + DLL |
-| BITS Job | T1197 | User | Medium | bitsadmin |
-| UEFI Bootkit | T1542.003 | SYSTEM | **Critical** | BlackLotus |
-
-### Active Directory
-
-| Technique | MITRE ID | Privilege | Persistence Scope |
-|-----------|----------|-----------|------------------|
-| Golden Ticket | T1558.001 | Domain Admin | Entire domain |
-| Silver Ticket | T1558.002 | Service account hash | Single service |
-| DCSync Rights | T1003.006 | Domain Admin | All hashes |
-| AdminSDHolder ACE | T1078.002 | Domain Admin | All protected groups |
-| SID History Injection | T1134.005 | Domain Admin | Domain-wide |
-
-### Linux / macOS / Cloud
-
-| Technique | Platform | Privilege | Stealth |
-|-----------|----------|-----------|---------|
-| Crontab | Linux | User | Low |
-| Systemd Service | Linux | Root | Medium |
-| SSH Authorized Keys | Linux/macOS | User | Medium |
-| Shell Profile (.bashrc/.zshrc) | Linux/macOS | User | Medium |
-| udev Rules | Linux | Root | **High** |
-| XDG Autostart | Linux (Desktop) | User | Medium |
-| SUID Backdoor | Linux | Root | Medium |
-| PAM Backdoor | Linux | Root | **Very High** |
-| LD_PRELOAD (/etc/ld.so.preload) | Linux | Root | **High** |
-| eBPF Rootkit (LinkPro/BPFDoor) | Linux | Root | **Critical** |
-| LKM Rootkit | Linux | Root | **Critical** |
-| WSL Persistence | Windows/Linux | User | **High** |
-| LaunchAgent | macOS | User | Medium |
-| LaunchDaemon | macOS | Root | Medium |
-| Login Items (T1547.015) | macOS 13+ | User | **High** |
-| Dylib Hijacking (T1574.004) | macOS | User | **Very High** |
-| DYLD_INSERT_LIBRARIES | macOS | User | **High** |
-| Azure App Registration | Azure AD | Global Admin | **High** |
-| IAM User + Access Key | AWS | Admin | Medium |
-| EventBridge + Lambda | AWS | Admin | **High** |
-| Cross-Account Role | AWS | Admin | **Very High** |
-| Golden SAML | Azure/ADFS | ADFS Admin | **Critical** |
-| K8s ClusterRoleBinding | Kubernetes | cluster-admin | **Very High** |
-| K8s DaemonSet | Kubernetes | cluster-admin | **High** |
-| K8s ServiceAccount Token | Kubernetes | cluster-admin | **Very High** |
-
-## Tools Arsenal
-
-| Tool | Purpose | Link |
-|------|---------|------|
-| Mimikatz | Golden/Silver/Diamond tickets, DCSync, SSP, Skeleton Key, DSRM | [GitHub](https://github.com/gentilkiwi/mimikatz) |
-| Impacket | secretsdump.py, ticketer.py (Diamond/Sapphire), psexec.py | [GitHub](https://github.com/fortra/impacket) |
-| Rubeus | Diamond Ticket (/ldap /opsec), Kerberos ticket operations | [GitHub](https://github.com/GhostPack/Rubeus) |
-| PowerSploit | Persistence module, Invoke-WMIBackdoor, New-GPOImmediateTask | [GitHub](https://github.com/PowerShellMafia/PowerSploit) |
-| SharPersist | Windows persistence C# (Registry, Task, Service, COM) | [GitHub](https://github.com/mandiant/SharPersist) |
-| SharpStay | .NET persistence toolkit | [GitHub](https://github.com/0xthirteen/SharpStay) |
-| Atomic Red Team | Persistence technique tests (T1547, T1053, T1546, T1137) | [GitHub](https://github.com/redcanaryco/atomic-red-team) |
-| PayloadsAllTheThings | Linux/macOS/Windows persistence reference | [GitHub](https://github.com/swisskyrepo/PayloadsAllTheThings) |
-| ADFSToolkit | Golden SAML / ADFS attacks | [GitHub](https://github.com/mandiant/ADFSDump) |
-| ROADtools | Azure AD/Entra ID persistence and enumeration | [GitHub](https://github.com/dirkjanm/ROADtools) |
-| Pacu | AWS persistence and attack toolkit | [GitHub](https://github.com/RhinoSecurityLabs/pacu) |
-| ScoutSuite | Cloud infrastructure auditing (find weak spots) | [GitHub](https://github.com/nccgroup/ScoutSuite) |
-| TripleCross | eBPF rootkit (backdoor, C2, library injection, persistence) | [GitHub](https://github.com/h3xduck/TripleCross) |
-| Ebpfkit | eBPF-based rootkit and C2 framework | [GitHub](https://github.com/Gui774ume/ebpfkit) |
-| DylibHijack Toolkit | Find and exploit dylib hijack paths on macOS | [GitHub](https://github.com/UnsaltedHash42/dylib-hijacking-toolkit) |
-| Autoruns | Defender tool enumerate all persistence mechanisms | [Sysinternals](https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns) |
-| Stratus Red Team | Cloud/K8s persistence technique emulation | [GitHub](https://github.com/DataDog/stratus-red-team) |
-| red-kube | K8s adversary emulation based on kubectl | [GitHub](https://github.com/lightspin-tech/red-kube) |
-
 ---
-
-*You're in. Now stay in. Persistence is the phase that separates a red team from a penetration test. A pentest pops a box and writes a report. A red team builds redundant, resilient, invisible footholds across endpoints, Active Directory, and cloud infrastructure  and stays until the engagement ends.*
-
-*This guide covered 12 phases and 50+ techniques: TA0003 MITRE mapping, Windows Registry (Run Keys, Winlogon, Port Monitor, Authentication Package, SSP, Time Provider, Netsh Helper DLL, Active Setup, Accessibility Features, IFEO, PowerShell Profile, Application Shimming, Office T1137), Scheduled Tasks (including invisible via SD deletion), Windows Services (SDDL-hidden), WMI Event Subscriptions (fileless), DLL/COM Hijacking + AppDomainManager Injection, UEFI Bootkits (BlackLotus/CosmicStrand), Active Directory (Golden Ticket, Diamond Ticket, Sapphire Ticket, Silver Ticket, DCSync, AdminSDHolder, SID History, DCShadow, Skeleton Key, DSRM backdoor, GPO persistence), Linux (Cron, Systemd, SSH, Shell Profile, udev Rules, XDG Autostart, SUID, PAM, LD_PRELOAD, eBPF rootkits, LKM, WSL), macOS (LaunchAgents, LaunchDaemons, Daemon Hijacking, Login Items T1547.015, Dylib Hijacking T1574.004), and Cloud (Azure AD Golden SAML, AWS IAM, EventBridge, GCP service accounts, Kubernetes DaemonSets/ClusterRoleBindings). Real APT TTPs from Lazarus, APT29, APT41, APT28/Forest Blizzard, Volt Typhoon, Salt Typhoon, Turla Snake, and UNC3944/Scattered Spider throughout.*
-
-*Next: Privilege Escalation  from user to SYSTEM, from domain user to domain admin, from cloud user to tenant owner.*
 
 ## References
 

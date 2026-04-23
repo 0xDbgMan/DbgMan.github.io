@@ -3,7 +3,7 @@ title: "Shellcode Loaders: Advanced Execution & Evasion Tradecraft"
 date: 2026-04-07 00:00:00 +0200
 categories: [Red Team, Loaders]
 tags: [shellcode, loaders, crystal-palace, reflective-dll, pic, evasion, red-team, cobalt-strike]
-description: "The complete red team guide to Shellcode Loaders: Classic, Reflective DLL (Stephen Fewer), .NET Assembly, Staged vs Stageless, PIC Loaders, and a deep dive into Crystal Palace IAT hooking, module overloading, NtContinue, Draugr, Ekko, and real-world implementations."
+description: ""
 toc: true
 image:
   path: /assets/img/shellcode-loaders/loaders-banner.png
@@ -11,36 +11,6 @@ image:
 ---
 
 > *Hi I'm DebuggerMan, a Red Teamer. The complete red team guide to Shellcode Loaders: Classic Shellcode Loaders, Reflective DLL Loaders (Stephen Fewer), .NET Assembly Loaders (CLR Hosting, Assembly.Load), Staged vs Stageless, PIC Loaders, and a **deep dive into Crystal Palace** Raphael Mudge's PIC linker, the Tradecraft Garden, PICO architecture, spec files, IAT hooking, module overloading, NtContinue entry transfer, call stack spoofing via Draugr, Ekko sleep masking, YARA signature removal, and real-world implementations (Eden, KaplaStrike, StealthPalace). Mapped to MITRE ATT&CK. Real APT case studies.*
-
-## Shellcode Loaders: Advanced Execution & Evasion Tradecraft
-
-**Contents**
-
-1. [Why Loaders Matter](#why-loaders-matter)
-2. [What is a Loader](#what-is-a-loader)
-3. [Loader Types Overview](#loader-types-overview)
-   - Classic Shellcode Loaders
-   - Reflective DLL Loaders (Stephen Fewer)
-   - .NET Assembly Loaders
-   - Staged vs Stageless Loaders
-   - PIC Loaders
-4. [Crystal Palace  The Deep Dive](#crystal-palace--the-deep-dive)
-   - What is Crystal Palace
-   - The Tradecraft Garden
-   - Architecture: COFFs, PICOs, and Spec Files
-   - Loader Types in Crystal Palace (Stomped vs Prepended)
-   - Simple Loader → Modular Loader
-   - IAT Hooking via PICO Mechanism
-   - Module Overloading (NtCreateSection + NtMapViewOfSection)
-   - NtContinue Entry Transfer
-   - Call Stack Spoofing with Draugr
-   - Sleep Masking (Ekko-Style)
-   - YARA Signature Removal (+mutate, +disco, +optimize)
-   - Real-World Implementations (Eden, KaplaStrike, StealthPalace)
-   - Crystal Palace with Cobalt Strike (UDRL Integration)
-   - Crystal Palace Beyond Cobalt Strike (C2 Agnostic)
-5. [Detection & OPSEC Considerations](#detection--opsec-considerations)
-6. [References & Resources](#references--resources)
 
 ---
 

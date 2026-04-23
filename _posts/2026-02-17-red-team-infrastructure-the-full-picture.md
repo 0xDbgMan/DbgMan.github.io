@@ -3,7 +3,7 @@ title: "Red Team Infrastructure The Full Picture: From Domain to Beacon"
 date: 2026-02-17 00:00:00 +0200
 categories: [Red Team, Red Team Infrastructure]
 tags: [red-team, c2, redirector, cobalt-strike, sliver, infrastructure, cdn, aws, azure, gcp, opsec, terraform, phishing, cloudflare, malleable-profiles]
-description: "The complete guide to Red Team Infrastructure: C2 Frameworks, Redirectors, CDN Relays (Azure, AWS, GCP), Serverless Lambda, Cloudflare Tunnels, Phishing Infrastructure, Mail Servers, Malleable Profiles, and full OPSEC hardening."
+description: ""
 toc: true
 image:
   path: /assets/img/red-team-infra/red-team-infra.png
@@ -25,7 +25,7 @@ This means:
 - Every domain, certificate, and header is carefully chosen to **blend in** with legitimate traffic
 - If one component is burned, the rest of your infrastructure **survives**
 
-## The Architecture High Level
+## The Architecture 
 
 Here's what a full red team infrastructure looks like:
 
@@ -1208,7 +1208,7 @@ Always validate before deploying:
 | C2 Matrix | C2 framework comparison | [thec2matrix.com](https://www.thec2matrix.com/) |
 | fireprox | AWS API Gateway IP rotation | [GitHub](https://github.com/ustayready/fireprox) |
 
-## Multi-Layer Architecture Example
+## Multi-Layer Architecture 
 
 Here's a production-grade setup using multiple CDN relays:
 
@@ -1225,13 +1225,6 @@ If Azure CDN gets burned → beacons fall back to CloudFront. If CloudFront gets
 This is what **resilient red team infrastructure** looks like.
 
 ---
-
-*Thanks for the read this is the foundation everything else builds on. Without solid infrastructure, the most advanced exploits and payloads are worthless. Build it right, build it once, automate it with Terraform, and your operations will survive anything the blue team throws at you.*
-
-*This guide covered 12 phases: Domain Selection, Terraform Deployment, C2 Frameworks, HTTPS Redirectors (Apache + Nginx), Redirector Fortification (4 layers), CDN Relays (Azure/AWS/GCP), Serverless Lambda, Flask/Gunicorn, Dev Tunnels, Cloudflare Workers & Tunnels, Phishing Infrastructure, and Malleable Profiles.*
-
-*Stay tuned for more.*
-
 ## References
 
 1. **White Knight Labs** - Advanced Red Team Operations Course (ARTO), comprehensive coverage of Terraform deployment, C2 frameworks, redirectors, CDN relays, and malleable profiles.
